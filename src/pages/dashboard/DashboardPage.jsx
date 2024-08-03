@@ -35,7 +35,7 @@ const DashboardPage = () => {
       window.removeEventListener("mousemove", resetLogoutTimer);
       window.removeEventListener("keydown", resetLogoutTimer);
     };
-  }, [milliseconds, onLogout]);
+  }, []);
 
   return (
     <section className="h-full">
