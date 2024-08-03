@@ -7,35 +7,35 @@ const minutes = 10;
 const milliseconds = minutes * 60 * 1000;
 
 const DashboardPage = () => {
-  // const logout = useAuthStore((state) => state.logoutUser);
-  // const navigate = useNavigate();
+  const logout = useAuthStore((state) => state.logoutUser);
+  const navigate = useNavigate();
 
-  // const onLogout = () => {
-  //   logout();
-  //   navigate("/");
-  // };
+  const onLogout = () => {
+    logout();
+    navigate("/");
+  };
 
-  // useEffect(() => {
-  //   const logoutTimer = setTimeout(() => {
-  //     onLogout();
-  //   }, milliseconds);
+  useEffect(() => {
+    let logoutTimer = setTimeout(() => {
+      onLogout();
+    }, milliseconds);
 
-  //   const resetLogoutTimer = () => {
-  //     clearTimeout(logoutTimer);
-  //     setTimeout(() => {
-  //       onLogout();
-  //     }, milliseconds);
-  //   };
+    const resetLogoutTimer = () => {
+      clearTimeout(logoutTimer);
+      logoutTimer = setTimeout(() => {
+        onLogout();
+      }, milliseconds);
+    };
 
-  //   window.addEventListener("mousemove", resetLogoutTimer);
-  //   window.addEventListener("keydown", resetLogoutTimer);
+    window.addEventListener("mousemove", resetLogoutTimer);
+    window.addEventListener("keydown", resetLogoutTimer);
 
-  //   return () => {
-  //     clearTimeout(logoutTimer);
-  //     window.removeEventListener("mousemove", resetLogoutTimer);
-  //     window.removeEventListener("keydown", resetLogoutTimer);
-  //   };
-  // }, []);
+    return () => {
+      clearTimeout(logoutTimer);
+      window.removeEventListener("mousemove", resetLogoutTimer);
+      window.removeEventListener("keydown", resetLogoutTimer);
+    };
+  }, [milliseconds, onLogout]);
 
   return (
     <section className="h-full">
