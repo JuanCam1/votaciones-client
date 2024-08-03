@@ -1,0 +1,51 @@
+.boton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #1f1f1f;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 8px;
+  background: #ecc506;
+  border: 2px solid;
+  border-color: #ecc506;
+  position: relative;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.boton:before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 100%;
+  background: #ffffff1a;
+  transition: all 1s ease;
+}
+
+.boton:hover:before {
+  width: 100%;
+}
+
+.boton3 {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #12AF40;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 8px;
+  background: rgba(0,0,0,0);
+  border: 1px solid #12AF40;
+  transition: all 1s ease;
+  position: relative;
+  border-radius: 5px;
+}
+.boton3:hover {
+  background: #12AF40;
+  color: #fff;
+}
+/* "cursor-pointer group flex items-center gap-2 p-2 rounded-md text-colorSecundary border border-white hover:border hover:bg-colorSecundary hover:text-white  font-semibold transition-all delay-100" */
